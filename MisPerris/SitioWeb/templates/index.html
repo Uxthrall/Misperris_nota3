@@ -1,0 +1,200 @@
+{% load staticfiles %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+		<title>MIS PERRIS</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="{% static 'css/estilos.css' %}" type="text/css" rel="stylesheet" />
+		
+		<link href="{% static 'fonts.css' %}" type="text/css" rel="stylesheet" />
+
+		<link href="{% static 'css/cuerpo.css' %}" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/flexslider.css' %}" type="text/css" rel="stylesheet" />
+
+		<script src="{% static 'js/formulario.js' %}"></script>
+		<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+		<script>
+	  	$(window).load(function() {
+	    $('.flexslider').flexslider({
+	    	touch:true,
+	    });
+		});
+		</script>
+</head>
+
+<body>
+		<header>
+			<div class="wrapper">
+				<div class="logo" >
+					<img src="{% static 'img/logo.png' %}" alt ="Duoc" width="250" height="50" />
+				</div>
+
+				
+                <nav class="menu">
+
+                    <a href="{% url 'pag_index' %}">Inicio</a>
+                    <a href="{% url 'pag_listar' %}" id="link1">Perros en Adopcion</a>
+                    <a href="{% url 'pag_formulario' %}">Formulario</a>
+                    <a href="contactanos">Contactanos</a> 
+
+                    <a href="{% provider_login_url "facebook" method="oauth2" %}" class="icon-facebook2">
+			      		
+			 		</a>
+                </nav>
+
+			</div>
+				
+		</header>
+
+
+		<div class="Social">
+			<ul>
+				<li><a href="" class="icon-facebook2"></a></li>
+				<li><a href="" class="icon-instagram"></a></li>
+				<li><a href="" class="icon-youtube"></a></li>
+				<li><a href="" class="icon-twitter"></a></li>
+			</ul>
+		</div>
+
+		<nav class="wrapper">
+				<div class="flexslider ">
+					
+
+					<ul class="slides">
+						<li>
+							<img src="{% static 'img/expertos1.jpg' %}" alt="experto" />
+							
+						</li>			
+						<li>
+							<img src="{% static 'img/Servicios.jpg' %}" alt="Servicios"/>
+							<section class="flex-caption">
+										
+										<h1 class="Rescate">RESCATE Y ADOPCIÓN DE PERROS CALLEJEROS </h1>
+							</section>
+						</li>			
+						<li>
+							<img src="{% static 'img/Adopcion.jpg' %}" alt="Adopcion" />
+							
+						</li>			
+					</ul>
+
+				</div>
+				
+						
+				
+		</nav>
+		
+			
+				<section class="contenido2 wrapper">
+					
+					
+						<div class="right wrape">
+							<img src="{% static 'img/crowfunding.jpg' %}" alt="crowfunding"  width="280" height="180"/>
+						 	<article>
+						 		<h1>CROWFUNDING</h1>
+						 		<h6>FINANCIAMIENTO</h6>
+						 		<br/>
+						 		<br/>
+						 		<p class="texto"> Sigue nuestras redes sociales para informarte acerca de las diversas capañas y actividades que realizamos para obtener financiamiento para seguir ayudando.</p>
+						 		<br/>
+						 		<br/>
+						 	</article>
+						</div>
+							
+
+					 	<aside class="left wrape2">
+					 		<h1 >RESCATE</h1>
+					 		<h6 >ETAPA UNO</h6>
+					 		<br/>
+					 		<br/>
+					 		<br/>
+					 		<p class="texto" >Rescatamos perros en situacón de peligro y/o abandono. Los rehabilitamos y los preparamos para buscarles un hogar</p>
+					 		<br/>
+					 		<br/>
+					 		<br/>
+					 		<img src="{% static 'img/rescate.jpg' %}" alt="rescate section" width="280" height="180">
+					 		<br/>
+					 		<br/>
+					 	</aside>
+				</section>
+
+			
+				
+			
+				<section class="cont ">
+					<div class="wrapper">
+
+
+						<h2 style="font-size: 30px; text-transform: uppercase;" class="text"> Rescatados</h2>
+						<h6 style="font-size: 20px; text-transform: uppercase;" class="	text2">perros que estuvieron en situación de peligro y/o abandono</h6>
+
+						<br>	
+						<ARTICLE class="hover ">
+							<h1>Pexel</h1>
+							<img src="{% static 'img/Pexel.jpg' %}" alt="rescate">
+							<p>Temperamento alegre y feliz, juegeton. Tienden a llevarse bien con las personas de todos las edades</p>
+							
+						</ARTICLE>
+						<ARTICLE class="hover ">
+							<h1>Chocolate</h1>
+							<img src="{% static 'img/Chocolate.jpg' %}" alt="rescate">
+							<p>Muy Tranquilo y amigable. le gusta pedir comida, es muy leal y cariñosa</p>
+							
+						</ARTICLE>
+						<ARTICLE class="hover ">
+							<h1>Bigotes</h1>
+							<img src="{% static 'img/Bigotes.jpg' %}" alt="rescate">
+							<p>Es independiente y extrovertidos. Su ladrido son amable por lo que no es un perro agresivo</p>
+							
+						</ARTICLE>
+						<ARTICLE class="hover ">
+							<h1>Oso</h1>
+							<img src="{% static 'img/Oso_tn.jpg' %}" alt="rescate">
+							<p>Caracter Tolerante, es un perro excelente para la convivencia con niños y otras mascota</p>
+						</ARTICLE>
+						<ARTICLE class="hover ">
+							<h1>Luna</h1>
+							<img src="{% static 'img/Luna.jpg' %}" alt="rescate">
+							<p>Temperamento alegre y feliz, juegeton. Tienden a llevarse bien con las personas de todos las edades</p>
+							
+						</ARTICLE>
+						<ARTICLE class="hover ">
+							<h1>Wifi</h1>
+							<img src="{% static 'img/Wifi_tn.jpg' %}" alt="rescate">
+							<p>Muy Tranquilo y amigable. le gusta pedir comida, es muy leal y cariñosa</p>
+						</ARTICLE>
+						<br>	
+							<div class="btn"> 
+								<a class="VerMas_btn" href="{% url 'pag_listar' %}">Ver Mas</a>
+							</div>
+
+							
+				</div>
+			</section>
+			
+			<footer class="pie ">
+				<div class="wrapper">
+					
+						<div class="textPie">Desarrollo web y Mobile</div>
+						<div class="Redes">
+										<p class="seguir">Siguenos en: </p>
+										<a href="https://www.facebook.com" target="_blank"><img src="{% static 'img/IconoFacebook.png' %}" alt="redes" /></a>
+										<a href="https://plus.google.com" target="_blank"><img src="{% static 'img/IconoGoogleMas.png' %}" alt="redes" /></a>
+										<a href="https://www.instagram.com" target="_blank"><img src="{% static 'img/IconoInstragram.png' %}" alt="redes" /></a>
+										<a href="https://twitter.com" target="_blank"><img src="{% static 'img/IconoTuiter.png' %}" alt="redes" /></a>
+						</div>
+	
+					
+					<div class="copy">
+						&copy; Alejandro Mordez && Andre Vasquez	
+					</div>
+				</div>	
+					
+			</footer>
+		
+</body>	
+</html>

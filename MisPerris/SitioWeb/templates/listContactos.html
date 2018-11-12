@@ -1,0 +1,154 @@
+{% load staticfiles %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+		<title>MIS PERRIS</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="{% static 'css/estilos.css' %}" type="text/css" rel="stylesheet" />
+		<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+		<link href="fonts.css" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/cuerpo.css' %}" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/flexslider.css' %}" type="text/css" rel="stylesheet" />
+		<script src="{% static 'js/formulario.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+		<script>
+	  	$(window).load(function() {
+	    $('.flexslider').flexslider({
+	    	touch:true,
+	    });
+		});
+		</script>
+</head>
+
+<body>
+		<header>
+			<div class="wrapper">
+				<div class="logo" >
+					<img src="{% static 'img/logo.png' %}" alt ="Duoc" width="250" height="50" />
+				</div>
+
+				
+                <nav class="menu">
+
+                    <a href="{% url 'pag_index' %}">Inicio</a>
+                    <a href="{% url 'pag_listar' %}" id="link1">Perros en Adopcion</a>
+                    <a href="{% url 'pag_formulario' %}">Formulario</a>
+                    <a href="contactanos">Contactanos</a> 
+
+                   
+                </nav>
+
+			</div>
+				
+		</header>
+
+
+		<div class="Social">
+			<ul>
+				<li><a href="" class="icon-facebook2"></a></li>
+				<li><a href="" class="icon-instagram"></a></li>
+				<li><a href="" class="icon-youtube"></a></li>
+				<li><a href="" class="icon-twitter"></a></li>
+			</ul>
+		</div>
+
+		<nav class="wrapper">
+				<div class="flexslider ">
+					
+					<ul class="slides">
+						<li>
+							<img src="{% static 'img/expertos1.jpg' %}" alt="experto" />
+							
+						</li>			
+						<li>
+							<img src="{% static 'img/Servicios.jpg' %}" alt="Servicios"/>
+							<section class="flex-caption">
+										
+										<h1 class="Rescate">RESCATE Y ADOPCIÓN DE PERROS CALLEJEROS </h1>
+							</section>
+						</li>			
+						<li>
+							<img src="{% static 'img/Adopcion.jpg' %}" alt="Adopcion" />
+							
+						</li>			
+					</ul>
+
+				</div>
+		</nav>
+				
+				<div class="wrapper">
+					<h1 class="text3" style="font-size: 30px; text-transform: uppercase;">Listados de Contactos</h1>
+					
+				</div>
+				<br>
+			<div class="wrapper">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<td>#</td>
+							<td>CorreoElectronico</td>
+						    <td>Run</td>
+						    <td>Nombre</td>
+						    <td>FechaNacimiento</td>
+						   	<td>Telefono</td>
+						    <td>Region</td>
+						   	<td>Comuna</td>
+						   	<td>Tipo Casa</td>
+						</tr>
+					</thead>
+					<tbody>
+						{% if posts %}
+						{% for cont in posts %}
+						<tr>
+						 	<td>{{cont.id}}</td>
+							<td>{{cont.CorreoElectronico}}</td>
+							<td>{{cont.Run}}</td>
+							<td>{{cont.Nombre}}</td>
+							<td>{{cont.FechaNacimiento}}</td>
+							<td>{{cont.Telefono}}</td>
+							<td>{{cont.region}}</td>
+							<td>{{cont.comuna}}</td>
+							<td>{{cont.tipoCasa}}</td>
+						</tr>	
+
+							
+						{% endfor%}
+						
+						{% else %}
+						<h1>No hay registros</h1>
+
+						{% endif %}
+					</tbody>
+				</table>
+			</div>
+
+
+		
+
+
+
+			<footer class="pie ">
+				<div class="wrapper">
+					
+						<div class="textPie">Desarrollo web y Mobile</div>
+						<div class="Redes">
+										<p class="seguir">Siguenos en: </p>
+										<a href="https://www.facebook.com" target="_blank"><img src="{% static 'img/IconoFacebook.png' %}" alt="redes" /></a>
+										<a href="https://plus.google.com" target="_blank"><img src="{% static 'img/IconoGoogleMas.png' %}" alt="redes" /></a>
+										<a href="https://www.instagram.com" target="_blank"><img src="{% static 'img/IconoInstragram.png' %}" alt="redes" /></a>
+										<a href="https://twitter.com" target="_blank"><img src="{% static 'img/IconoTuiter.png' %}" alt="redes" /></a>
+						</div>
+	
+					
+					&copy; Alejandro Mordez && Andre Vasquez
+
+				</div>
+
+			</footer>
+	
+	</body>
+
+</html>

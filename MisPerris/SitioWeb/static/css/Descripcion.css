@@ -1,0 +1,129 @@
+
+
+*{margin:0; padding: 0;}
+
+.perito{
+	width: 100%;
+	height:450px;
+	background:#fbfbfb;
+	margin: auto;
+	padding-top: 100px;
+	
+
+}
+header nav footer{
+	overflow: hidden;
+}
+
+nav .wrapperLogo{
+
+		width: 60%;
+		max-width:max-content;
+		margin: auto;
+		padding-top: 50px;
+		margin-left:auto;
+		margin-right: auto;	
+
+
+}
+
+footer .Redes{
+	
+	width: 60%;
+	max-width:max-content;
+	margin: auto;
+	padding-left: 700px;
+	margin-left:auto;
+	margin-right: auto;	
+}
+
+.Rescate{
+	text-align: 	center;
+	padding-top: 	90px;
+	padding-left: 	80px;
+	padding-right: 	 	200px;
+	line-break:auto;
+	width: 	auto;
+	font:bold 100% cursive	;
+	color: #e1efee;
+	display: inline-block;
+	
+}
+.Numero{
+	padding-left: 	50px;
+	float: 	left;
+	padding-top: 	90px;
+	width: 	auto;
+	display: inline-block;
+	font:bold 100% cursive	;
+	color: #e1efee;
+}
+#VerMas{
+	border:none	;
+	font-size: 	2em;
+	
+}
+
+@media screen and (max-width: 1072px){
+	
+	.perito{
+		height: auto;
+		width: 100%;
+	}
+	footer .Redes{
+	
+		width: 60%;
+		max-width:max-content;
+		margin: auto;
+		padding-left: 0px;
+		margin-left:auto;
+		margin-right: auto;	
+		float: none;
+	}
+
+
+	.Rescate{
+		text-align: 	none;
+		padding-top: 	5%;
+		padding-left: 	10%;
+		padding-right: 	 	10%;
+		line-break:auto;
+		width: 	auto;
+		font:bold 100% cursive	;
+		color: #e1efee;
+		display: inline-block;
+		
+	}
+	.Numero{
+		padding-left: 	10%;
+		float: 	none;
+		padding-top: 	90px;
+		width: 	auto;
+		display: inline-block;
+		font:bold 100% cursive	;
+		color: #e1efee;
+	}
+	
+}
+
+@media screen and (max-width: 599px){
+
+	.perito{
+		width: 100%;
+
+		height:auto;
+		background:#72c9ac;
+		margin: auto;
+		padding-top: 100px;
+
+	}
+	nav .wrapperLogo{
+
+		width: 90%;
+		max-width:max-content;
+		margin: auto;
+		padding-top: 80px;
+		margin-left:auto;
+		margin-right: auto;	
+	}
+}

@@ -1,0 +1,186 @@
+{% load staticfiles %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+		<title>MIS PERRIS</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="{% static 'css/estilos.css' %}" type="text/css" rel="stylesheet" />
+		<script src="{% static 'js/jquery-1.10.2.min.js' %}"></script>
+		<link href="{% static 'fonts.css' %}" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/cuerpo.css' %}" type="text/css" rel="stylesheet" />
+		<link href="{% static 'css/flexslider.css' %}" type="text/css" rel="stylesheet" />
+		<script src="{% static 'js/formulario.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+		<script>
+	  	$(window).load(function() {
+	    $('.flexslider').flexslider({
+	    	touch:true,
+	    });
+		});
+		</script>
+</head>
+
+<body>
+		<header>
+			<div class="wrapper">
+				<div class="logo" >
+					<img src="{% static 'img/logo.png' %}" alt ="Duoc" width="250" height="50" />
+				</div>
+
+				
+                <nav class="menu">
+
+                    <a href="{% url 'pag_index' %}">Inicio</a>
+                    <a href="{% url 'pag_listar' %}" id="link1">Perros en Adopcion</a>
+                    <a href="{% url 'pag_formulario' %}">Formulario</a>
+                    <a href="contactanos">Contactanos</a> 
+
+                    
+
+                </nav>
+
+			</div>
+				
+		</header>
+
+
+		<div class="Social">
+			<ul>
+				<li><a href="" class="icon-facebook2"></a></li>
+				<li><a href="" class="icon-instagram"></a></li>
+				<li><a href="" class="icon-youtube"></a></li>
+				<li><a href="" class="icon-twitter"></a></li>
+			</ul>
+		</div>
+
+		<nav class="wrapper">
+				<div class="flexslider ">
+					
+					<ul class="slides">
+						<li>
+							<img src="{% static 'img/expertos1.jpg' %}" alt="experto" />
+							
+						</li>			
+						<li>
+							<img src="{% static 'img/Servicios.jpg' %}" alt="Servicios"/>
+							<section class="flex-caption">
+										
+										<h1 class="Rescate">RESCATE Y ADOPCIÓN DE PERROS CALLEJEROS </h1>
+							</section>
+						</li>			
+						<li>
+							<img src="{% static 'img/Adopcion.jpg' %}" alt="Adopcion" />
+							
+						</li>			
+					</ul>
+
+				</div>
+		</nav>
+				
+				<div class="wrapper">
+					<h1 class="text3" style="font-size: 30px; text-transform: uppercase;">Contactanos</h1>
+					{% if estado %}
+						<img class="gracias" src="{% static 'img/Gracias-por-Contactarnos.png' %}" alt="thank" />
+					{% endif %}
+				</div>
+				
+
+				<div class="content wrapper">
+					<div class="contactos">
+						<ul>
+							<li style="list-style: none;"><a class="icon-location"></a>Esq Blanca 501, Maipú</li>
+							<li style="list-style: none;"><a class="icon-mail2"></a>Adopciomisperris@perris.cl</li>
+							<li style="list-style: none;"><a class="icon-phone"></a>+569 45625467</li>
+
+						</ul>
+					</div>
+
+					<form action="#" method="POST" name="formulario" class="form-register">{% csrf_token %}
+							
+								<h2 style="font-size: 30px; text-transform: uppercase;" class="text">Postula</h2>
+							<h6 style="font-size: 20px; text-transform: uppercase;" class="	text2">Registro para adoptar a una mascota</h6>
+
+							<div class="contenedor-inputs"> 
+									<input type="text" id="correo" name="correo" placeholder="Correo electrónico" class="imput-100" />
+
+									<input type="text" id="run" name="run" placeholder="Run" class="imput-50" />
+
+									<input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" class="imput-100" required />
+
+									<input type="date"  id="fecha" value="2000-12-31" min="1940-12-31" max="2000-12-31" name="fecha_nacimiento" class="imput-50"  />
+
+									<input type="text" id="telefono" name="telefono" placeholder="Telefono" class="imput-50" />
+
+									<select name="cosa"  class="imput-50" onchange="cambia()">
+										<option value=0>Seleccione Región
+										<option value=1>I Región de Tarapacá
+										<option value=2>II Región de Antofagasta
+										<option value=3>III Región de Atacama
+										<option value=4>IV Región de Coquimbo
+										<option value=5>V Región de Valparaíso
+										<option value=6>VI Región del Libertador General Bernardo O’Higgins
+										<option value=7>VII Región del Maule
+										<option value=8>VIII Región del Bío-Bío
+										<option value=9>IX Región de La Araucanía
+										<option value=10>X Región de Los Lagos
+										<option value=11>XI Región Aysén del General Carlos Ibáñez del Campo
+										<option value=12>XII Región de Magallanes y Antártica Chilena
+										<option value=13>Región Metropolitana de Santiago
+										<option value=14>XIV Región de Los Ríos
+										<option value=15>XV Región de Arica y Parinacota	
+									</select>
+									<select name="opt" class="imput-50">
+										<option value="-">Seleccione Provincia
+									</select>
+
+									<select name="Vivienda" class="imput-50">
+										<option>Casa con patio Grande</option>
+										<option>Casa con patio Pequeño</option>
+										<option>Casa sin patio</option>
+										<option>Departamento</option>
+
+									</select>
+
+									<select name="NomPerru" class="imput-50">
+										<option value="" disabled selected>Perros Disponible</option>
+										{% if formularios %}
+											{% for form in formularios %}	
+												<option>{{ form.nombre}}</option>
+											{% endfor%}
+										{% else %}
+											<option>No hay Perros</option>
+										{% endif %}
+									</select>
+
+									<input type="submit" value="Registrar" class="btn-enviar" id="btn"  onclick="validar()">
+							</div>								
+					
+					</form>	
+					
+				</div>	
+
+			<footer class="pie ">
+				<div class="wrapper">
+					
+						<div class="textPie">Desarrollo web y Mobile</div>
+						<div class="Redes">
+										<p class="seguir">Siguenos en: </p>
+										<a href="https://www.facebook.com" target="_blank"><img src="{% static 'img/IconoFacebook.png' %}" alt="redes" /></a>
+										<a href="https://plus.google.com" target="_blank"><img src="{% static 'img/IconoGoogleMas.png' %}" alt="redes" /></a>
+										<a href="https://www.instagram.com" target="_blank"><img src="{% static 'img/IconoInstragram.png' %}" alt="redes" /></a>
+										<a href="https://twitter.com" target="_blank"><img src="{% static 'img/IconoTuiter.png' %}" alt="redes" /></a>
+						</div>
+	
+					
+					&copy; Alejandro Mordez && Andre Vasquez
+
+				</div>
+
+			</footer>
+	
+	</body>
+
+</html>
